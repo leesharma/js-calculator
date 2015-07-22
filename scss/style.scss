@@ -1,0 +1,147 @@
+/**
+ * Javascript Calculator Stylesheet
+ * ================================
+ * author: Lee Sharma
+ * licence: MIT
+ *
+ *   TODO: fix buttons
+ *   TODO: add instructions on large screens
+ */
+
+/* iOS fonts */
+$fonts: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* measurements */
+$width: 320px;
+$height: 480px;
+$row-height: $height / 6;
+$col-width: $width / 4; 
+$max-screen-nums: 10;
+$break-small: 360px;
+$break-large: 960px;
+/* colors */
+$screen-bg: #222;         // dark grey
+$screen-fg: white;        // white
+$key-base-bg: #cccccc;    // light grey
+$key-base-fg: #222222;    // almost-black
+$key-opt-bg: #aaaaaa;     // medium-grey
+$key-funct-bg: #ff8800;   // orange
+$key-funct-fg: #eeeeee;   // almost-white
+$border-color: #666;      // medium dark grey
+
+html, body {
+  height: 100%;
+  background: url('http://forums.macrumors.com/attachments/backgroundtile-png.292491/') fixed repeat;
+  font-family: $fonts;
+	font-weight: 100;
+  color: #aaa;
+  text-align: center;
+}
+
+.container { display: none; min-width: $width; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:  $fonts;
+  font-weight: 100;
+  color: #ccc;
+  font-size: 3em;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  @media screen and (max-width: $break-small) {
+    font-size: 2em;
+    margin: 0.5em 0 -0.5em 0;
+  }
+}
+
+footer {
+  margin: 30px;
+  @media screen and (max-width: $break-small) {
+    font-size: 0.8em;
+  }
+  a {
+    text-decoration: underline;
+    &:visited { color: #888; }
+  }
+}
+
+small {
+  font-size: 50%;
+  color: #aaa;
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+}
+
+.calculator {
+  /* background: $key-base-bg; */
+  position: relative;
+  
+  // alignment
+  width: $width;
+  height: $height;
+  margin: 50px auto;
+  padding: 0;
+  
+  // edges
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 30px 0px rgba(0,0,0,0.75);
+}
+
+.screen {
+  background: $screen-bg;
+  color: $screen-fg;
+  height: $row-height;
+  width: 100%;
+  text-align: right;
+  font-size: 3em;
+  line-height: $row-height;
+  .numbers {
+    padding-right: 10px;
+  }
+  .indicator {
+    float: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 0.5em;
+    color: #aaa;
+    vertical-align: text-top;
+    line-height: 100%;
+  }
+}
+
+.row { 
+  height: $row-height; 
+  overflow: hidden;
+}
+
+.invalid { background-color: #ccc !important; color: #222 !important; }
+
+.key {
+  background: $key-base-bg;
+  cursor: pointer;
+  display: inline-block;
+  color: $key-base-fg;
+  width: $col-width;
+  margin: 0; padding: 0;
+  text-align: center;
+  height: $row-height;
+  line-height: $row-height;
+  font-size: 2em;
+  margin-right: -5px;
+  margin-left: -1px;
+  border: 1px $border-color solid;
+}
+
+.funct-key {
+  background: $key-funct-bg;
+  color: $key-funct-fg;
+}
+
+.opt-key {
+  background: $key-opt-bg;
+}
+
+.col-2 {
+  width: $col-width * 2;
+}

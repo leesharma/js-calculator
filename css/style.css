@@ -1,0 +1,140 @@
+/**
+ * Javascript Calculator Stylesheet
+ * ================================
+ * author: Lee Sharma
+ * licence: MIT
+ *
+ *   TODO: fix buttons
+ *   TODO: add instructions on large screens
+ */
+/* iOS fonts */
+/* measurements */
+/* colors */
+html, body {
+  height: 100%;
+  background: url("http://forums.macrumors.com/attachments/backgroundtile-png.292491/") fixed repeat;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #aaa;
+  text-align: center;
+}
+
+.container {
+  display: none;
+  min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #ccc;
+  font-size: 3em;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 360px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+    margin: 0.5em 0 -0.5em 0;
+  }
+}
+
+footer {
+  margin: 30px;
+}
+@media screen and (max-width: 360px) {
+  footer {
+    font-size: 0.8em;
+  }
+}
+footer a {
+  text-decoration: underline;
+}
+footer a:visited {
+  color: #888;
+}
+
+small {
+  font-size: 50%;
+  color: #aaa;
+}
+@media screen and (max-width: 360px) {
+  small {
+    display: none;
+  }
+}
+
+.calculator {
+  /* background: $key-base-bg; */
+  position: relative;
+  width: 320px;
+  height: 480px;
+  margin: 50px auto;
+  padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.75);
+}
+
+.screen {
+  background: #222;
+  color: white;
+  height: 80px;
+  width: 100%;
+  text-align: right;
+  font-size: 3em;
+  line-height: 80px;
+}
+.screen .numbers {
+  padding-right: 10px;
+}
+.screen .indicator {
+  float: left;
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 0.5em;
+  color: #aaa;
+  vertical-align: text-top;
+  line-height: 100%;
+}
+
+.row {
+  height: 80px;
+  overflow: hidden;
+}
+
+.invalid {
+  background-color: #ccc !important;
+  color: #222 !important;
+}
+
+.key {
+  background: #cccccc;
+  cursor: pointer;
+  display: inline-block;
+  color: #222222;
+  width: 80px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  font-size: 2em;
+  margin-right: -5px;
+  margin-left: -1px;
+  border: 1px #666 solid;
+}
+
+.funct-key {
+  background: #ff8800;
+  color: #eeeeee;
+}
+
+.opt-key {
+  background: #aaaaaa;
+}
+
+.col-2 {
+  width: 160px;
+}
